@@ -10,15 +10,15 @@ see conf/translate_input.sh for sample script that take stdin and netcat to Josh
 following are python dependences that are required to be installed.
 assuming python 2.7+ is installed.
 
-#use pip to install needed component
-curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
-python get-pip.py
-pip install django==1.8
-pip install markdown defusedxml
-pip install lxml
-pip install dateutil
-pip install pyyaml
-pip install django-tastypie
+use pip to install needed component
+	curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+	python get-pip.py
+	pip install django==1.8
+	pip install markdown defusedxml
+	pip install lxml
+	pip install dateutil
+	pip install pyyaml
+	pip install django-tastypie
 
 
  
@@ -53,7 +53,8 @@ conf/supervisord/django_cms.conf to the include folder.
 
 for more production configuration, you might want to deploying Django with Apache and mod_wsgi
 
- install mod_wsgi to your Apache server, append your Apache server’s httpd.conf file with conf/apache/httpd.conf file.
+ install mod_wsgi to your Apache server, append your Apache serverâ€™s 
+ httpd.conf file with conf/apache/httpd.conf file.
  this assume, you are copying Joshua-web folder to /var/www/ folder.
  
  tested configuration in  ubuntu:
@@ -67,8 +68,10 @@ for more production configuration, you might want to deploying Django with Apach
 		WSGIScriptAlias / /var/www/Joshua-web/conf/apache/django.wsgi
  		Alias /static /var/www/Joshua-web/static
    		Alias /media   /var/www/Joshua-web/static/
+   		
 
-    service apache2 restart
+
+    	service apache2 restart
    
 
 
