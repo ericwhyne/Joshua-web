@@ -1,0 +1,46 @@
+ <html ng-app="myTranslationApp">
+
+<!--
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+-->
+<script src="static/js/angular.min.js"></script>
+<script src="static/js/jquery.min.js"></script>
+ 
+<title>Joshua machine translation toolkit</title>
+<body>
+
+ <div style="padding-left:20px;
+padding-top:20px;" >
+            
+            <a href="http://joshua-decoder.org" target="_blank"><img src="static/images/joshua-logo-small.png" /></a>
+            <p><a href="http://joshua-decoder.org" target="_blank">Joshua machine translation toolkit</a></p>
+           
+ </div>
+          
+<div ng-controller="myTranslationCtrl">
+
+<h2>Translate Text From Arabic To English</h2>
+<!-- TODO: when service is more stable, enable dynamic translation when user type in text 
+ng-change="translate()"-->
+<p><textarea  ng-model="orig_text" cols="150" rows="10"  ></textarea></p>
+<p>
+<textarea ng-model="translated_text"  ng-show="translated_text.length>0"  value="Translation"  cols="150" rows="10" readonly></textarea></p>
+<p>
+<input type="hidden" id="api_url" value="{{JOSHUA_WEB_API_URL}}"/>
+<button  ng-model="translate" ng-click="translate()" ng-disabled="orig_text.length==0">Translate</button>
+<button ng-model="clear"  ng-click="clear()" ng-disabled="orig_text.length==0">Clear</button>
+</p>
+
+<p>Number of characters: <span ng-bind="numCharcters()"></span></p>
+<!--
+<p>Using API URL {{JOSHUA_WEB_API_URL}}?format=json&orig_text=""</p>
+-->
+</div>
+
+
+<script src="/static/js/app.js"></script>
+<script src="/static/js/ctrl.js"></script>
+
+</body>
+</html>
